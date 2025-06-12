@@ -41,9 +41,11 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --shadow-base: var(--shadow);
 }
 
 :root {
+  --shadow: 0 4px 10px rgba(164, 90, 255, 0.4);
   --radius: 0.5rem;
   --background: #f1f5f9;
   --foreground: oklch(0.129 0.042 264.695);
@@ -79,6 +81,7 @@
 }
 
 .dark {
+  --shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
@@ -119,4 +122,21 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+}
+
+.falling-circle {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
