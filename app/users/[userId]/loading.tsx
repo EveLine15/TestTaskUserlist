@@ -8,11 +8,27 @@ export default function Loading() {
             <Skeleton className="h-10 w-1/3" />
           </div>
     
-          <div className="grid grid-cols-1 gap-8">
-                <Skeleton className="h-16 w-full" />
-                <Skeleton className="h-16 w-full" />
-                <Skeleton className="h-16 w-full" />
+            <div className="grid w-full px-2 py-4 border rounded-lg shadow-sm bg-white dark:bg-slate-900">
+              <Skeleton className="h-23 w-full mb-8" />
+
+              <div className='flex flex-col gap-2'>
+                <div className="flex gap-2 h-1/3 mb-10">
+                  <Skeleton className="h-22 w-1/2" />
+                  <Skeleton className="h-22 w-1/2" />
+                </div>
+
+                <div className='flex flex-col gap-2'>
+                  <div className="flex gap-2">
+                    <Skeleton className="h-10 w-1/2" />
+                    <Skeleton className="h-10 w-1/2" />
+                  </div>
+                  
+                    <Skeleton className="h-10 w-full" />
+                </div>
+              </div>
+
+            </div>
+
           </div>
-        </div>
   )
 }
