@@ -1,22 +1,23 @@
 import UsersListClient from "../components/UsersListClient";
 import { SlimUser } from "@/types/user";
+import { TypographyH1 } from "@/components/ui/typography";
 
 export default async function UsersList() {
   let users: SlimUser[] = [];
 
-    try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/users");
-      users = await response.json();
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
 
-    } catch (error: any) {
-      throw new Error(`Unable to fetch users: ${error.message || 'Unexpected error occurred.'}`);
-    }
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch user: ${response.status} ${response.statusText}`,
+    );
+  }
+
+  users = await response.json();
 
   return (
-    <div className="max-w-[1440px] mx-auto px-4 py-8">
-      <h1 className="text-4xl sm:text-2xl md:text-5xl font-bold text-purple-500 mb-6">
-        Dashboard
-      </h1>
+    <div className="mx-auto max-w-[1440px] px-4 py-8">
+      <TypographyH1 children="Dashboard" />
       <UsersListClient users={users} />
     </div>
   );

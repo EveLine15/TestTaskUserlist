@@ -7,8 +7,8 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-3 rounded-lg border border-slate-200 py-6 shadow-sm transition-all duration-200 ease-in-out overflow-hidden relative before:absolute before:top-0 before:left-0 before:w-1 before:h-full before:bg-gradient-to-b before:from-indigo-600 before:via-purple-500 before:to-pink-400 hover:-translate-y-0.5 hover:shadow-base]",
-        className
+        "bg-card text-card-foreground hover:shadow-base] relative flex flex-col gap-3 overflow-hidden rounded-lg border border-slate-200 py-6 shadow-sm transition-all duration-200 ease-in-out before:absolute before:top-0 before:left-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-indigo-600 before:via-purple-500 before:to-pink-400 hover:-translate-y-0.5",
+        className,
       )}
       {...props}
     />
@@ -21,7 +21,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card-header"
       className={cn(
         "grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
-        className
+        className,
       )}
       {...props}
     />
@@ -54,7 +54,7 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card-action"
       className={cn(
         "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-        className
+        className,
       )}
       {...props}
     />

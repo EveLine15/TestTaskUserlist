@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { TypographyMuted } from "@/components/ui/typography";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -26,7 +27,7 @@ export default function UsersListClient({ users }: { users: SlimUser[] }) {
   const filteredList = useMemo(() => {
     if (search.length > 1) {
       return users.filter((user) =>
-        user.name.toLowerCase().includes(search.toLowerCase())
+        user.name.toLowerCase().includes(search.toLowerCase()),
       );
     }
     return users;
@@ -39,11 +40,11 @@ export default function UsersListClient({ users }: { users: SlimUser[] }) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search by name..."
-          className="w-full mb-6"
+          className="mb-6 w-full"
         />
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-500" />
+        <Search className="absolute top-1/2 left-3 h-5 w-5 -translate-y-1/2 transform text-slate-500" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
           {filteredList.map((user) => (
             <motion.div
@@ -62,15 +63,13 @@ export default function UsersListClient({ users }: { users: SlimUser[] }) {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="bg-slate-50 rounded-md p-3 mb-3 border border-slate-200">
+                    <div className="mb-3 rounded-md bg-slate-50 p-3">
                       <div className="flex items-center">
-                        <div className="bg-slate-200 p-2 rounded-md inline-flex items-center justify-center mr-3">
-                          <Mail className="w-5 h-5 text-purple-500" />
+                        <div className="mr-3 inline-flex items-center justify-center rounded-md bg-slate-200 p-2">
+                          <Mail className="h-5 w-5 text-purple-500" />
                         </div>
                         <div>
-                          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-slate-500 mb-1 bg-slate-100 px-2 py-1 rounded">
-                            Email
-                          </span>
+                          <TypographyMuted>Email</TypographyMuted>
                           <p className="text-sm text-slate-700">{user.email}</p>
                         </div>
                       </div>

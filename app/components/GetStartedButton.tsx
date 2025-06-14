@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 export default function GetStartedButton() {
-    const router = useRouter();
+  const router = useRouter();
 
-    function handleClick() {
-        router.push("/users");
-    }
+  function handleClick() {
+    router.push("/users");
+  }
   return (
-    <Button size="xl" onClick={handleClick}>
+    <Button className="hover:bg-purple-900" size="xl" onClick={handleClick}>
       Get Started
     </Button>
   );

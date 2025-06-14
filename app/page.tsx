@@ -3,22 +3,19 @@ import FallingCircles from "@/components/animation/FallingCircles";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-500 to-pink-400 overflow-hidden px-4 sm:px-6">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-500 to-pink-400 px-4 sm:px-6">
       <FallingCircles />
 
-      <div className="absolute top-0 left-0 w-24 h-24 bg-white/15 rounded-full blur-sm z-0"></div>
-      <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-md z-0"></div>
-      <div className="absolute bottom-0 left-0 w-28 h-28 bg-white/10 rounded-full blur-sm z-0"></div>
-      <div className="absolute bottom-0 right-0 w-16 h-16 bg-white/25 rounded-full blur-sm z-0"></div>
+      <div className="absolute top-0 left-0 z-0 h-24 w-24 rounded-full bg-white/15 blur-sm"></div>
+      <div className="absolute top-0 right-0 z-0 h-32 w-32 rounded-full bg-white/20 blur-md"></div>
+      <div className="absolute bottom-0 left-0 z-0 h-28 w-28 rounded-full bg-white/10 blur-sm"></div>
+      <div className="absolute right-0 bottom-0 z-0 h-16 w-16 rounded-full bg-white/25 blur-sm"></div>
 
-      <div className="z-10 backdrop-blur-md bg-white/60 dark:bg-white/10 rounded-2xl p-6 sm:p-8 md:p-10 shadow-2xl max-w-3xl w-full text-center border border-white/30">
-        <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-          Welcome to your{" "}
-          <strong className="text-indigo-700 dark:text-indigo-300">
-            Dashboard
-          </strong>
+      <div className="z-10 w-full max-w-3xl rounded-2xl border border-white/30 bg-white/60 p-6 text-center shadow-2xl backdrop-blur-md transition-transform duration-200 ease-in-out hover:-translate-y-1 sm:p-8 md:p-10">
+        <h1 className="mb-6 text-4xl leading-tight font-bold text-slate-900 sm:text-5xl">
+          Welcome to your <strong className="text-indigo-700">Dashboard</strong>
         </h1>
-        <p className="text-slate-700 dark:text-slate-300 mb-8 text-lg">
+        <p className="mb-8 text-lg text-slate-700">
           Your personal space to manage, explore, and grow.
         </p>
         <GetStartedButton />

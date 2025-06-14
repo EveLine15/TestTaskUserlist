@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "User Dashboard",
-  description: "A modern dashboard for viewing and managing user information, activity, and insights.",
+  description:
+    "A modern dashboard for viewing and managing user information, activity, and insights.",
 };
 
 export default function RootLayout({
@@ -13,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
